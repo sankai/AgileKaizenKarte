@@ -1,0 +1,29 @@
+<%= form_for(@sessionlog) do |f| %>
+  <% if @sessionlog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sessionlog.errors.count, "error") %> prohibited this sessionLog from being saved:</h2>
+
+      <ul>
+      <% @sessionlog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :classwork_id %><br>
+    <% if params[:classwork_id].blank? %>
+      <%= f.collection_select( :classwork_id, Classwork.all, :id, :sessiondate, :include_blank => true ) %>
+    <% else %>
+      <%= f.collection_select( :classwork_id, Classwork.all, :id, :sessiondate, :include_blank => false, :selected => params[:classwork_id] ) %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :contents %><br>
+    <%= f.text_area :contents %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

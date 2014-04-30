@@ -1,0 +1,25 @@
+<%= form_for(@classwork) do |f| %>
+  <% if @classwork.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@classwork.errors.count, "error") %> prohibited this classwork from being saved:</h2>
+
+      <ul>
+      <% @classwork.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sessiondate %><br>
+    <%= f.date_field :sessiondate %>
+  </div>
+  <div class="field">
+    <%= f.label :term_id %><br>
+    <%= f.collection_select( :term_id, Term.all, :id, :name, :include_blank => false ) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

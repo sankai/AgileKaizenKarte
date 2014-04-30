@@ -1,0 +1,29 @@
+<h1>塾生記録一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @studentlogs.each do |studentlog| %>
+      <tr>
+        <td><%= studentlog.student_id %></td>
+        <td><%= link_to '詳細', studentlog %></td>
+        <td><%= link_to '編集', edit_studentlog_path(studentlog) %></td>
+        <td><%= link_to '削除', studentlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規登録', new_studentlog_path %>
+<%= link_to 'メインメニュー', root_path %>
+

@@ -1,0 +1,2 @@
+module StudentlogsHelper
+end

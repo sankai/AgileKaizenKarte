@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sessiondate: 2014-04-30
+  term_id: 1
+
+two:
+  sessiondate: 2014-04-30
+  term_id: 1

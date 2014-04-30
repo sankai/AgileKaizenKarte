@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sessiondate:</strong>
+  <%= @classwork.sessiondate %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @classwork.term.name %>
+</p>
+
+<%= link_to 'Edit', edit_classwork_path(@classwork) %> |
+<%= link_to 'Back', classworks_path %>

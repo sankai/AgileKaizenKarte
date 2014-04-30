@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Session:</strong>
+  <%= @sessionlog.session_id %>
+</p>
+
+<%= link_to 'Edit', edit_sessionlog_path(@sessionlog) %> |
+<%= link_to 'Back', sessionlogs_path %>

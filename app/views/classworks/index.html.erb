@@ -1,0 +1,31 @@
+<h1>開催日一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>開催日</th>
+      <th>期</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classworks.each do |classwork| %>
+      <tr>
+        <td><%= classwork.sessiondate %></td>
+        <td><%= classwork.term.name %></td>
+        <td><%= link_to 'この日の活動記録をつける', new_sessionlog_path( :classwork_id => classwork.id ) %></td>
+        <td><%= link_to '詳細', classwork %></td>
+        <td><%= link_to '編集', edit_classwork_path(classwork) %></td>
+        <td><%= link_to '削除', classwork, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規開催日', new_classwork_path %>
+<%= link_to 'メインメニュー', root_path %>
