@@ -20,11 +20,11 @@ rails g migration AddEmailToStaff email:string
 
 rails g migration AddResetPasswordTokenToStaff reset_password_token:string
 
---
-
 rails g scaffold Classwork sessiondate:date term_id:integer
 
 rails g migration addClassworkIdToSessionlog classwork_id:integer
 
 rails g migration removeSessionIdFromSessionlog session_id:integer
+
+rails g migration addStaffcodeToStaff staffcode:string
 

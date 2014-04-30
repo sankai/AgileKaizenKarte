@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430114211) do
+ActiveRecord::Schema.define(version: 20140430155114) do
 
   create_table "classworks", force: true do |t|
     t.date     "sessiondate"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140430114211) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "staffcode"
   end
 
   add_index "staffs", ["email"], name: "index_staffs_on_email", unique: true
