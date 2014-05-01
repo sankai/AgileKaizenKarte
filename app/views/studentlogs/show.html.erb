@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Student:</strong>
-  <%= @studentlog.student_id %>
+  <strong>塾生</strong>
+  <%= @studentlog.student.name %>
+</p>
+<br/>
+<p>
+  <strong>記録</strong>
+  <%= Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(@studentlog.contents).html_safe %>
 </p>
 
-<%= link_to 'Edit', edit_studentlog_path(@studentlog) %> |
-<%= link_to 'Back', studentlogs_path %>
+<%= link_to '編集', edit_studentlog_path(@studentlog) %> |
+<%= link_to '戻る', studentlogs_path %>

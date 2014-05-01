@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Sessiondate:</strong>
+  <strong>開催日</strong>
   <%= @classwork.sessiondate %>
 </p>
 
@@ -10,5 +10,5 @@
   <%= @classwork.term.name %>
 </p>
 
-<%= link_to 'Edit', edit_classwork_path(@classwork) %> |
-<%= link_to 'Back', classworks_path %>
+<%= link_to '編集', edit_classwork_path(@classwork) %> |
+<%= link_to '戻る', classworks_path %>

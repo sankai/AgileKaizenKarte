@@ -69,6 +69,6 @@ class SessionlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sessionlog_params
-      params.require(:sessionlog).permit(:classwork_id, :student_id)
+      params.require(:sessionlog).permit(:classwork_id, :student_id, :contents)
     end
 end

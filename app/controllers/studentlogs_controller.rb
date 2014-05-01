@@ -69,6 +69,6 @@ class StudentlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def studentlog_params
-      params.require(:studentlog).permit(:student_id)
+      params.require(:studentlog).permit(:student_id, :contents)
     end
 end

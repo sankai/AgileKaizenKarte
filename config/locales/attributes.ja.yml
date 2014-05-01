@@ -1,6 +1,28 @@
 ja:
   activerecord:
     attributes:
+      staff:
+        staffcode: コード
+        name: 名前
+        email: ｅメール
+        desc: 説明
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        current_password: 現在のパスワード
+      student:
+        name: 名前
+        desc: 説明
+      term:
+        name: 期
+      classwork:
+        sessiondate: 開催日
+      sessionlog:
+        sessiondate: 開催日
+        contents: 記録
+      studentlog:
+        sessiondate: 開催日
+        student: 塾生
+        contents: 記録
       company:
         name: 会社名
         category: 分類

@@ -3,17 +3,19 @@
 <table>
   <thead>
     <tr>
-      <th>Student</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th width="80"  >塾生</th>
+      <th width="480" >記録</th>
+      <th width="40"  ></th>
+      <th width="40"  ></th>
+      <th width="40"  ></th>
     </tr>
   </thead>
 
   <tbody>
     <% @studentlogs.each do |studentlog| %>
       <tr>
-        <td><%= studentlog.student_id %></td>
+        <td><%= studentlog.student.name %></td>
+        <td><%= studentlog.leadingContents %></td>
         <td><%= link_to '詳細', studentlog %></td>
         <td><%= link_to '編集', edit_studentlog_path(studentlog) %></td>
         <td><%= link_to '削除', studentlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>

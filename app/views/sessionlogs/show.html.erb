@@ -4,6 +4,11 @@
   <strong>開催日</strong>
   <%= @sessionlog.classwork.sessiondate %>
 </p>
+<br/>
+<p>
+  <strong>記録</strong>
+  <%= Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(@sessionlog.contents).html_safe %>
+</p>
 
-<%= link_to 'Edit', edit_sessionlog_path(@sessionlog) %> |
-<%= link_to 'Back', sessionlogs_path %>
+<%= link_to '編集', edit_sessionlog_path(@sessionlog) %> |
+<%= link_to '戻る', sessionlogs_path %>

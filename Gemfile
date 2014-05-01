@@ -47,3 +47,5 @@ end
 # Use Devise
 gem 'devise'
 
+# Use redcarpet for rendering markdown language
+gem 'redcarpet' 
