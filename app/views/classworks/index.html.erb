@@ -3,8 +3,13 @@
 <table>
   <thead>
     <tr>
-      <th>開催日</th>
-      <th>期</th>
+      <th width="120" >開催日</th>
+      <th width="80"  >期</th>
+      <th width="160" ></th>
+      <th width="40"  ></th>
+      <th width="40"  ></th>
+      <th width="80"  ></th>
+
       <th></th>
       <th></th>
       <th></th>
@@ -19,7 +24,7 @@
         <td><%= link_to 'この日の活動記録をつける', new_sessionlog_path( :classwork_id => classwork.id ) %></td>
         <td><%= link_to '詳細', classwork %></td>
         <td><%= link_to '編集', edit_classwork_path(classwork) %></td>
-        <td><%= link_to '削除', classwork, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', classwork, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>

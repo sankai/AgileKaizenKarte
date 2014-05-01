@@ -1,9 +1,9 @@
-<h1>Listing sessionlogs</h1>
+<h1>活動記録一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Session</th>
+      <th>開催日</th>
       <th></th>
       <th></th>
       <th></th>
@@ -13,10 +13,10 @@
   <tbody>
     <% @sessionlogs.each do |sessionlog| %>
       <tr>
-        <td><%= sessionlog.session_id %></td>
-        <td><%= link_to 'Show', sessionlog %></td>
-        <td><%= link_to 'Edit', edit_sessionlog_path(sessionlog) %></td>
-        <td><%= link_to 'Destroy', sessionlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= sessionlog.classwork.sessiondate %></td>
+        <td><%= link_to '詳細', sessionlog %></td>
+        <td><%= link_to '編集', edit_sessionlog_path(sessionlog) %></td>
+        <td><%= link_to '削除', sessionlog, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>

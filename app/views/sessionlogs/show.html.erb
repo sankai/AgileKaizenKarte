@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Session:</strong>
-  <%= @sessionlog.session_id %>
+  <strong>開催日</strong>
+  <%= @sessionlog.classwork.sessiondate %>
 </p>
 
 <%= link_to 'Edit', edit_sessionlog_path(@sessionlog) %> |

@@ -3,12 +3,13 @@
 <table>
   <thead>
     <tr>
-      <th>名前</th>
-      <th>説明</th>
-      <th>期</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th width="120" >名前</th>
+      <th width="240" >説明</th>
+      <th width="80"  >期</th>
+      <th width="160" ></th>
+      <th width="40"  ></th>
+      <th width="40"  ></th>
+      <th width="80"  ></th>
     </tr>
   </thead>
 
@@ -18,9 +19,9 @@
         <td><%= student.name %></td>
         <td><%= student.desc %></td>
         <td><%= student.term.name %></td>
-        <td><%= link_to 'この塾生の記録をつける', new_studentlog_path( :student_id => student.id ) %></td>
-        <td><%= link_to '詳細', student %></td>
-        <td><%= link_to '編集', edit_student_path(student) %></td>
+        <td><%= link_to 'この塾生の記録をつける  ', new_studentlog_path( :student_id => student.id ) %></td>
+        <td><%= link_to '詳細    ', student %></td>
+        <td><%= link_to '編集    ', edit_student_path(student) %></td>
         <td><%= link_to '削除する', student, method: :delete, data: { confirm: '本当に削除していいですか?' } %></td>
       </tr>
     <% end %>

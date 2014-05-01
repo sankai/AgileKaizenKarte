@@ -1,12 +1,12 @@
-<h1>Listing terms</h1>
+<h1>期 一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th width="120">名前</th>
+      <th width="40"></th>
+      <th width="40"></th>
+      <th width="40"></th>
     </tr>
   </thead>
 
@@ -14,9 +14,9 @@
     <% @terms.each do |term| %>
       <tr>
         <td><%= term.name %></td>
-        <td><%= link_to 'Show', term %></td>
-        <td><%= link_to 'Edit', edit_term_path(term) %></td>
-        <td><%= link_to 'Destroy', term, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', term %></td>
+        <td><%= link_to '編集', edit_term_path(term) %></td>
+        <td><%= link_to '削除', term, method: :delete, data: { confirm: '削除していいですか?' } %></td>
       </tr>
     <% end %>
   </tbody>

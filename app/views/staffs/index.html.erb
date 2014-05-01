@@ -1,13 +1,12 @@
-<h1>Listing staffs</h1>
+<h1>スタッフ一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Desc</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th width="120" >名前</th>
+      <th width="240" >説明</th>
+      <th width="40"  ></th>
+      <th width="80"  ></th>
     </tr>
   </thead>
 
@@ -16,9 +15,8 @@
       <tr>
         <td><%= staff.name %></td>
         <td><%= staff.desc %></td>
-        <td><%= link_to 'Show', staff %></td>
-        <td><%= link_to 'Edit', edit_staff_path(staff) %></td>
-        <td><%= link_to 'Destroy', staff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', staff %></td>
+        <td><%= link_to '削除', staff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
