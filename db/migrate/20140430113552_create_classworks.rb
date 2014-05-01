@@ -3,7 +3,7 @@ class CreateClassworks < ActiveRecord::Migration
     create_table :classworks do |t|
       t.date :sessiondate
       t.integer :term_id
-
+      
       t.timestamps
     end
   end
