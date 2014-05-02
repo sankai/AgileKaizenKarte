@@ -2,12 +2,16 @@
 
 <p>
   <strong>塾生</strong>
-  <%= @studentlog.student.name %>
+  <%= @studentlog.student.name %><br/>	
+  <strong>記入者</strong>
+  <%= @studentlog.staff.name %>
 </p>
-<br/>
+<hr/>
 <p>
-  <strong>記録</strong>
   <%= Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(@studentlog.contents).html_safe %>
+</p>
+<hr/>
+<p>
 </p>
 
 <%= link_to '編集', edit_studentlog_path(@studentlog) %> |

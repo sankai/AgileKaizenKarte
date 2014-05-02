@@ -1,5 +1,7 @@
 class Sessionlog < ActiveRecord::Base
+
   belongs_to :classwork
+  belongs_to :staff
 
   def leadingContents
     unless self.contents.blank? 

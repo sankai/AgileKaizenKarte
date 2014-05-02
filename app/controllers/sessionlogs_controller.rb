@@ -15,6 +15,7 @@ class SessionlogsController < ApplicationController
   # GET /sessionlogs/new
   def new
     @sessionlog = Sessionlog.new
+    @sessionlog.staff = current_staff
   end
 
   # GET /sessionlogs/1/edit
@@ -25,6 +26,7 @@ class SessionlogsController < ApplicationController
   # POST /sessionlogs.json
   def create
     @sessionlog = Sessionlog.new(sessionlog_params)
+    @sessionlog.staff = current_staff
 
     respond_to do |format|
       if @sessionlog.save
@@ -69,6 +71,6 @@ class SessionlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sessionlog_params
-      params.require(:sessionlog).permit(:classwork_id, :student_id, :contents)
+      params.require(:sessionlog).permit(:classwork_id, :sfaff_id, :student_id, :contents)
     end
 end

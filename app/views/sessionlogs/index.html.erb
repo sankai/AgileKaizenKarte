@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th width="100" >開催日</th>
+      <th width="80"  >記録者</th>
       <th width="480" >記録</th>
       <th width="40"  ></th>
       <th width="40"  ></th>
@@ -15,6 +16,7 @@
     <% @sessionlogs.each do |sessionlog| %>
       <tr>
         <td><%= sessionlog.classwork.sessiondate %></td>
+        <td><%= sessionlog.staff.name %></td>
         <td><%= sessionlog.leadingContents %></td>
         <td><%= link_to '詳細', sessionlog %></td>
         <td><%= link_to '編集', edit_sessionlog_path(sessionlog) %></td>

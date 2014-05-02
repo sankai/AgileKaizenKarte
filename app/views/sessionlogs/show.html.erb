@@ -2,13 +2,15 @@
 
 <p>
   <strong>開催日</strong>
-  <%= @sessionlog.classwork.sessiondate %>
+  <%= @sessionlog.classwork.sessiondate %><br/>
+  <strong>記入者</strong>
+  <%= @sessionlog.staff.name %>
 </p>
-<br/>
+<hr/>
 <p>
-  <strong>記録</strong>
   <%= Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(@sessionlog.contents).html_safe %>
 </p>
-
+<br/>
+<hr/>
 <%= link_to '編集', edit_sessionlog_path(@sessionlog) %> |
 <%= link_to '戻る', sessionlogs_path %>
