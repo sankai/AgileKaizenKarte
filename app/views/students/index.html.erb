@@ -35,9 +35,15 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
+<br />
+<hr />
+<%= form_tag 'students/upload', :method => :put, :multipart => true do %>
+  塾生一括登録:（*.csv）名前　説明　期(id) 
+  <%= file_field_tag 'upload_file', :accept => 'text/comma-separated-values' %>
+  <%= submit_tag "アップロード", :confirm => "アップロードしていいですか？" %>
+<% end %>
+<hr />
+<br />
 <%= link_to '新規登録', new_student_path %>
 <%= link_to 'メインメニュー', root_path %>
 

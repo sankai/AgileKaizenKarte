@@ -6,7 +6,6 @@
       <th width="120" >名前</th>
       <th width="240" >説明</th>
       <th width="40"  ></th>
-      <th width="80"  ></th>
     </tr>
   </thead>
 
@@ -16,7 +15,6 @@
         <td><%= staff.name %></td>
         <td><%= staff.desc %></td>
         <td><%= link_to '詳細', staff %></td>
-        <td><%= link_to '削除', staff, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>

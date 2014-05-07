@@ -61,6 +61,19 @@ class StudentsController < ApplicationController
     end
   end
 
+  # CSV Upload /upload
+  def upload
+    require 'csv'
+	  unless params[:upload_file].blank?
+	    reader = params[:upload_file].read
+	    CSV.parse(reader) do |row|
+	      s = Student.from_csv(row)
+	      s.save()
+	    end
+	  end
+	  redirect_to :action => :index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student

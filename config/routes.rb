@@ -1,5 +1,9 @@
 AgileKaizenKarte::Application.routes.draw do
 
+  root 'menu#show'
+
+  put 'students/upload' => 'students#upload'
+  
   devise_for :staffs
   
   resources :terms
@@ -11,10 +15,9 @@ AgileKaizenKarte::Application.routes.draw do
   resources :studentlogs
 
   resources :students
-
+  
   resources :staffs
 
-  root to: 'menu#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
