@@ -4,7 +4,7 @@ class ClassworksController < ApplicationController
   # GET /classworks
   # GET /classworks.json
   def index
-    @classworks = Classwork.all
+    @classworks = Classwork.order("sessiondate desc")
   end
 
   # GET /classworks/1

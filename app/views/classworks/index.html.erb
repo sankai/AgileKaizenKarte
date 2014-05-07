@@ -5,11 +5,13 @@
     <tr>
       <th width="120" >開催日</th>
       <th width="80"  >期</th>
-      <th width="160" ></th>
-      <th width="40"  ></th>
-      <th width="40"  ></th>
-      <th width="80"  ></th>
-
+      <% if params[:index] %>
+        <th width="160" ></th>
+      <% else %>
+        <th width="40"  ></th>
+        <th width="40"  ></th>
+        <th width="80"  ></th>
+      <% end %>
       <th></th>
       <th></th>
       <th></th>
@@ -21,10 +23,14 @@
       <tr>
         <td><%= classwork.sessiondate %></td>
         <td><%= classwork.term.name %></td>
-        <td><%= link_to 'この日の活動記録をつける', new_sessionlog_path( :classwork_id => classwork.id ) %></td>
-        <td><%= link_to '詳細', classwork %></td>
-        <td><%= link_to '編集', edit_classwork_path(classwork) %></td>
-        <td><%= link_to '削除', classwork, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+        <% if params[:index] %>
+          <td><%= link_to 'この日の活動記録をみる',   sessionlogs_path( :classwork_id => classwork.id ) %></td>
+          <td><%= link_to 'この日の活動記録をつける', new_sessionlog_path( :classwork_id => classwork.id ) %></td>
+        <% else %>
+          <td><%= link_to '詳細', classwork %></td>
+          <td><%= link_to '編集', edit_classwork_path(classwork) %></td>
+          <td><%= link_to '削除', classwork, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

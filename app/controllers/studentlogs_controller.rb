@@ -4,7 +4,10 @@ class StudentlogsController < ApplicationController
   # GET /studentlogs
   # GET /studentlogs.json
   def index
-    @studentlogs = Studentlog.all
+    @studentlogs = Studentlog.order("updated_at desc")
+    if params[:student_id]
+      @studentlogs = @studentlogs.where(:student_id => params[:student_id])
+    end
   end
 
   # GET /studentlogs/1

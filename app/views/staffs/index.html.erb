@@ -16,7 +16,7 @@
         <td><%= staff.name %></td>
         <td><%= staff.desc %></td>
         <td><%= link_to '詳細', staff %></td>
-        <td><%= link_to '削除', staff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', staff, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,6 +24,5 @@
 
 <br>
 
-<%= link_to '新規登録',       new_staff_path %>
 <%= link_to 'メインメニュー', root_path %>
 

@@ -6,10 +6,14 @@
       <th width="120" >名前</th>
       <th width="240" >説明</th>
       <th width="80"  >期</th>
-      <th width="160" ></th>
-      <th width="40"  ></th>
-      <th width="40"  ></th>
-      <th width="80"  ></th>
+      <% if params[:index] %>
+        <th width="160" ></th>
+        <th width="160" ></th>
+      <% else %>
+        <th width="40"  ></th>
+        <th width="40"  ></th>
+        <th width="80"  ></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -19,10 +23,14 @@
         <td><%= student.name %></td>
         <td><%= student.desc %></td>
         <td><%= student.term.name %></td>
-        <td><%= link_to 'この塾生の記録をつける  ', new_studentlog_path( :student_id => student.id ) %></td>
-        <td><%= link_to '詳細    ', student %></td>
-        <td><%= link_to '編集    ', edit_student_path(student) %></td>
-        <td><%= link_to '削除する', student, method: :delete, data: { confirm: '本当に削除していいですか?' } %></td>
+        <% if params[:index] %>
+          <td><%= link_to 'この塾生の記録をみる',   studentlogs_path( :student_id => student.id ) %></td>
+          <td><%= link_to 'この塾生の記録をつける', new_studentlog_path( :student_id => student.id ) %></td>
+        <% else %>
+          <td><%= link_to '詳細    ', student %></td>
+          <td><%= link_to '編集    ', edit_student_path(student) %></td>
+          <td><%= link_to '削除する', student, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

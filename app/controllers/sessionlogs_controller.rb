@@ -4,7 +4,10 @@ class SessionlogsController < ApplicationController
   # GET /sessionlogs
   # GET /sessionlogs.json
   def index
-    @sessionlogs = Sessionlog.all
+    @sessionlogs = Sessionlog.order("updated_at desc")
+    if params[:classwork_id]
+      @sessionlogs = @sessionlogs.where(:classwork_id => params[:classwork_id])
+    end
   end
 
   # GET /sessionlogs/1

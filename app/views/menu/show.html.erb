@@ -1,14 +1,15 @@
 <h1>アジャイル改善カルテ メインメニュー</h1>
 <br>
-<h3>業務</h3>
+<h3>最新情報</h3>
+<p><%= link_to '塾生の記録', studentlogs_path %></p>
+<p><%= link_to '開催日の記録', sessionlogs_path %></p>
 
-<p><%= link_to '塾生ごとの記録', studentlogs_path %></p>
-
-<p><%= link_to '開催日ごとの記録', sessionlogs_path %></p>
-
-<p><%= link_to '開催日の追加', new_classwork_path %></p>
+<h3>記録をつける</h3>
+<p><%= link_to '塾生ごとの記録', students_path(:index => "on")  %></p>
+<p><%= link_to '開催日ごとの記録', classworks_path(:index => "on")  %></p>
 
 <h3>マスター管理</h3>
+<p><%= link_to '開催日の追加', new_classwork_path %></p>
 <p><%= link_to '塾生一覧', students_path %></p>
 <p><%= link_to 'スタッフ一覧', staffs_path %></p>
 <p><%= link_to '期一覧', terms_path %></p>
