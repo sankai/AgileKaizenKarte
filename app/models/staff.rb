@@ -6,6 +6,6 @@ class Staff < ActiveRecord::Base
          :authentication_keys => [:staffcode]
 
   validates_uniqueness_of :email
-  validates_uniqueness_of :reset_password_token
+  # validates_uniqueness_of :reset_password_token
   
 end
