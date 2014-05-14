@@ -17,8 +17,8 @@
       <%= f.collection_select( :student_id, Student.all, :id, :name, :include_blank => true ) %>
     <% else %>
       <%= f.collection_select( :student_id, Student.all, :id, :name, :include_blank => false, :selected => params[:student_id] ) %>
-    <% end %>    
-    <%= f.label :sessiondate %>
+    <% end %>
+    <%= f.label :classwork %>
     <%= f.collection_select( :classwork_id, Classwork.order('sessiondate desc'), :id, :sessiondate, :include_blank => false ) %>
   </div>
   

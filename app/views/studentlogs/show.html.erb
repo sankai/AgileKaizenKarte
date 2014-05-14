@@ -8,7 +8,9 @@
   </td>
   <td width="160">
   <strong>開催日</strong>
-  <%= @studentlog.classwork.sessiondate %>
+  <% unless @studentlog.classwork.nil? %>
+    <%= @studentlog.classwork.sessiondate %>
+  <% end %>
   </td>
   <td width="160">
   <strong>記入者</strong>
