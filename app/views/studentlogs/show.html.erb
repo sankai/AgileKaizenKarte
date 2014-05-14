@@ -1,10 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <table>
+  <td width="160">
   <strong>塾生</strong>
-  <%= @studentlog.student.name %><br/>	
+  <%= @studentlog.student.name %>
+  </td>
+  <td width="160">
+  <strong>開催日</strong>
+  <%= @studentlog.classwork.sessiondate %>
+  </td>
+  <td width="160">
   <strong>記入者</strong>
   <%= @studentlog.staff.name %>
+  </td>
+  </table>
 </p>
 <hr/>
 <p>

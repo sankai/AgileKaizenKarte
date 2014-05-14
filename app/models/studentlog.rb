@@ -2,6 +2,7 @@ class Studentlog < ActiveRecord::Base
 
   belongs_to :student
   belongs_to :staff
+  belongs_to :classwork
 
   def leadingContents
     unless self.contents.blank? 

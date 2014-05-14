@@ -32,3 +32,6 @@ rails g migration AddSfaffIdToSessionlog staff_id:integer
 
 rails g migration AddSfaffIdToStudentlog staff_id:integer
 
+rails g migration AddClassworkIdToStudentlog classwork_id:integer
+
+

@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th width="100"  >コード</th>
       <th width="120" >名前</th>
       <th width="240" >説明</th>
       <th width="40"  ></th>
@@ -12,6 +13,7 @@
   <tbody>
     <% @staffs.each do |staff| %>
       <tr>
+        <td><%= staff.staffcode %></td>
         <td><%= staff.name %></td>
         <td><%= staff.desc %></td>
         <td><%= link_to '詳細', staff %></td>

@@ -18,7 +18,10 @@
     <% else %>
       <%= f.collection_select( :student_id, Student.all, :id, :name, :include_blank => false, :selected => params[:student_id] ) %>
     <% end %>    
+    <%= f.label :sessiondate %>
+    <%= f.collection_select( :classwork_id, Classwork.order('sessiondate desc'), :id, :sessiondate, :include_blank => false ) %>
   </div>
+  
   <div class="field">
     <%= f.label :contents %><br>
     <%= f.text_area :contents, :size => "80x16" %>
