@@ -25,9 +25,9 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
+<%= will_paginate @studentlogs, :previous_label=>'≪前', :next_label=>'次≫', renderer: BootstrapPagination::Rails %>
+<br>
 <%= link_to '新規登録', new_sessionlog_path %>
 <%= link_to 'メインメニュー', root_path %>
 

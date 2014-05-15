@@ -4,7 +4,7 @@ class StudentlogsController < ApplicationController
   # GET /studentlogs
   # GET /studentlogs.json
   def index
-    @studentlogs = Studentlog.order("updated_at desc")
+    @studentlogs = Studentlog.paginate(:page => params[:page], :order => 'updated_at desc', :per_page => 20)
     if params[:student_id]
       @studentlogs = @studentlogs.where(:student_id => params[:student_id])
     end

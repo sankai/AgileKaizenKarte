@@ -55,3 +55,15 @@ gem 'devise'
 
 # Use redcarpet for rendering markdown language
 gem 'redcarpet' 
+
+# for pagination
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
+# to upload files
+# gem 'carrierwave'  
+
+# for cloudinary
+# gem 'cloudinary'	# heroku only
+
+
