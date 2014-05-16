@@ -15,7 +15,11 @@
   <tbody>
     <% @sessionlogs.each do |sessionlog| %>
       <tr>
-        <td><%= sessionlog.classwork.sessiondate %></td>
+        <% unless sessionlog.classwork.nil? %>
+          <td><%= sessionlog.classwork.sessiondate %></td>
+        <% else %>
+          <td></td>
+        <% end %>
         <td><%= sessionlog.staff.name %></td>
         <td><%= sessionlog.leadingContents %></td>
         <td><%= link_to '詳細', sessionlog %></td>
