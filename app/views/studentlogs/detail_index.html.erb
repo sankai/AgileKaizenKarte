@@ -1,4 +1,4 @@
-<h1>塾生記録一覧</h1>
+<h1>塾生記録　一覧</h1>
 
 <table>
   <thead>
@@ -21,7 +21,7 @@
         <% end %></td>
         <td><%= studentlog.student.name %></td>
         <td><%= studentlog.staff.name %></td>
-        <% if params[:detail].nil? %>
+        <% unless params[:detail].nil? %>
           <td><%= studentlog.leadingContents %></td>        
         <% else %>
           <td><%= Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(studentlog.contents).html_safe %></td>

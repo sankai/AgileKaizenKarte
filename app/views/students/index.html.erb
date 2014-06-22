@@ -7,8 +7,9 @@
       <th width="240" >説明</th>
       <th width="80"  >期</th>
       <% if params[:index] %>
-        <th width="160" ></th>
-        <th width="160" ></th>
+        <th width="120" ></th>
+        <th width="120" ></th>
+        <th width="120" ></th>
       <% else %>
         <th width="40"  ></th>
         <th width="40"  ></th>
@@ -24,8 +25,9 @@
         <td><%= student.desc %></td>
         <td><%= student.term.name %></td>
         <% if params[:index] %>
-          <td><%= link_to 'この塾生の記録をみる',   studentlogs_path( :student_id => student.id ) %></td>
-          <td><%= link_to 'この塾生の記録をつける', new_studentlog_path( :student_id => student.id ) %></td>
+          <td><%= link_to '記録をみる(一覧)',   studentlogs_path( :student_id => student.id) %></td>
+          <td><%= link_to '記録をみる(詳細)',   studentlogs_path( :student_id => student.id, :detail => 'on') %></td>
+          <td><%= link_to '記録をつける', new_studentlog_path( :student_id => student.id ) %></td>
         <% else %>
           <td><%= link_to '詳細    ', student %></td>
           <td><%= link_to '編集    ', edit_student_path(student) %></td>
