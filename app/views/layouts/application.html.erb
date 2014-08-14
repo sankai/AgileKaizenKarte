@@ -21,6 +21,7 @@
             <li><%= link_to 'メインメニュー', root_path %></li>
           <% end %>
             <li><%= link_to 'マークアップ記述の説明', 'http://ja.wikipedia.org/wiki/Markdown', { :popup => true } %></li>
+            <li><%= link_to '現在位置の表示', 'whereyouare.html', { :popup => true } %></li>
             <li><a href="/staffs/edit"><b>ログイン : <%= current_staff.name %></b></a></li>
             <li><%= link_to 'プロファイル', edit_staff_registration_path %></li>
             <li><%= link_to "ログアウト", destroy_staff_session_path, :method => :delete %></li>
