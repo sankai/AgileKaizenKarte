@@ -20,5 +20,8 @@ module AgileKaizenKarte
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ja
     
+    # Avoid error caused  by divice when it regarded ip spoofing error
+    config.action_dispatch.ip_spoofing_check = false
+    
   end
 end
